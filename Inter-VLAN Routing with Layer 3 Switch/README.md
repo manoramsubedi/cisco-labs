@@ -35,10 +35,24 @@ Created the respective VLAN and assigned end-device ports as access ports.
 
 The same configuration was applied for VLAN 20 (HR) and VLAN 30 (FIN) with their respective VLAN IDs.
 
+## Layer 3 Switch Configuration
+### Create VLANs
+    vlan 10
+    name IT
+
+    vlan 20
+    name HR
+
+    vlan 30
+    name FIN
+### Configur Trunk Port
+    interface range g1/0/1-3
+    switchport mode trunk
+
 ### Enable Layer 3 Routing
     ip routing
 
-### SVIs (Switched Virtual Interfaces)
+### Configure SVIs (Switched Virtual Interfaces)
     interface vlan 10
     ip address 192.168.1.1 255.255.255.0
     no shutdown
